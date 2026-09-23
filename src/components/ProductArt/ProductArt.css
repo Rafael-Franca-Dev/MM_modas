@@ -1,0 +1,32 @@
+.product-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  background: var(--roxo-100);
+  overflow: hidden;
+}
+
+/* Bolinhas de fundo para dar textura */
+.product-art::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(44, 31, 74, 0.08) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.product-art__svg {
+  position: relative;
+  width: 72%;
+  height: 72%;
+  transition: transform 0.35s ease;
+}
+
+.art-print {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 26px;
+  fill: #2c1f4a;
+  stroke: none;
+}

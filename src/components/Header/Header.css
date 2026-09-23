@@ -1,0 +1,145 @@
+.announcement {
+  background: var(--roxo-900);
+  color: var(--laranja-100);
+  text-align: center;
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
+.announcement p {
+  margin: 0;
+}
+
+.announcement strong {
+  color: var(--laranja-300);
+  letter-spacing: 0.04em;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 248, 241, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header--scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 6px 20px -16px rgba(44, 31, 74, 0.4);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  height: var(--header-h);
+}
+
+.header__logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.header__link {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.header__link:hover {
+  background: var(--roxo-100);
+}
+
+.header__link--active {
+  background: var(--roxo-200);
+  font-weight: 700;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.header__cart,
+.header__toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--roxo-900);
+  background: var(--laranja-200);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.header__cart:hover {
+  transform: rotate(-8deg);
+}
+
+.header__badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--roxo-600);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  border: 2px solid var(--bg);
+}
+
+.header__toggle {
+  display: none;
+  background: var(--roxo-100);
+}
+
+@media (max-width: 820px) {
+  .header__toggle {
+    display: grid;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: var(--space-4);
+    background: var(--bg);
+    border-bottom: 2px solid var(--roxo-900);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .header__nav--open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .header__link {
+    padding: 14px 16px;
+    font-size: 18px;
+  }
+}
